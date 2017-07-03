@@ -1,7 +1,7 @@
 
 class Bike
 def working?
-  "string"
+  true
   end
 end
 var = Bike.new
