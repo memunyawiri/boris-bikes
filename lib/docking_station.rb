@@ -4,6 +4,10 @@ class DockingStation
  def release_bike
    Bike.new
  end
-end
+
+ def dock(bike)
+
+  end
+ end
 
 docking_station = DockingStation.new
