@@ -11,7 +11,7 @@ describe DockingStation do
   it {is_expected.to respond_to(:dock).with(1).argument}
   it 'docks bike' do
     bike = Bike.new
-    expect(subject.dock(bike)).to eq bike
+    expect(subject.dock(bike)).to eq [bike]
   end
 
   describe '#release_bike' do
@@ -28,9 +28,8 @@ end
 
   describe "#docks" do
     it "doesn't accept more bikes than station capacity" do
-    bike = Bike.new
-    subject.dock(bike)
-    expect { subject.dock(bike) }.to raise_error "Sorry, this dock is in use"
+      20.times { subject.dock Bike.new}
+    expect { subject.dock Bike.new }.to raise_error "Sorry, this dock is in use"
   end
 end
 
