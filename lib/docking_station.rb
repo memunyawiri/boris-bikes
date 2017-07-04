@@ -9,9 +9,8 @@ class DockingStation
   end
 
   def dock(bike)
+    fail "Sorry, this dock is in use" if @bike
     @bike = bike
   end
-
-
 
 end
